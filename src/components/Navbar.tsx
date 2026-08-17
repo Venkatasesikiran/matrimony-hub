@@ -23,10 +23,12 @@ export function Navbar() {
           <Button variant="ghost" size="sm">
             About Us
           </Button>
-          <Button variant="outline" size="sm">
-            Log in
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/login">Log in</Link>
           </Button>
-          <Button size="sm">Register</Button>
+          <Button size="sm" asChild>
+            <Link to="/register">Register</Link>
+          </Button>
         </div>
       </nav>
     </header>
