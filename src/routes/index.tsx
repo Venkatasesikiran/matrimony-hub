@@ -1,24 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Matrimony — Find Your Perfect Life Partner" },
+      {
+        name: "description",
+        content:
+          "Matrimony helps you discover verified profiles and meaningful matches. Register free or log in to begin your journey.",
+      },
+      { property: "og:title", content: "Matrimony — Find Your Perfect Life Partner" },
+      {
+        property: "og:description",
+        content:
+          "Discover verified profiles and meaningful matches on Matrimony. Register free today.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="mx-auto max-w-6xl px-4 py-24 text-center">
+        <h1 className="font-serif text-4xl font-semibold text-foreground sm:text-5xl">
+          Find your perfect life partner
+        </h1>
+        <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          Trusted matchmaking with verified profiles, thoughtful matches, and complete privacy.
+        </p>
+      </main>
     </div>
   );
 }
