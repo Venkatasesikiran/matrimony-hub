@@ -159,8 +159,8 @@ function Index() {
                   alt="Couple standing together under a floral wedding arch at sunset"
                   width={1280}
                   height={720}
+                  loading="eager"
                   className="relative rounded-2xl border border-border shadow-2xl"
-                  priority="true"
                 />
               </div>
             </div>
