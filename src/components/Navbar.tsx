@@ -20,13 +20,15 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm">
-            About Us
+          <Button variant="ghost" size="sm" asChild>
+            <Link to="/about">About Us</Link>
           </Button>
-          <Button variant="outline" size="sm">
-            Log in
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/login">Log in</Link>
           </Button>
-          <Button size="sm">Register</Button>
+          <Button size="sm" asChild>
+            <Link to="/register">Register</Link>
+          </Button>
         </div>
       </nav>
     </header>
